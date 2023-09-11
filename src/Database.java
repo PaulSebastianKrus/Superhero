@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-class Database {
+public class Database {
     private ArrayList<Superhero> superheroes = new ArrayList<>();
 
     public void addSuperhero(String name, String realName, String superPower, int yearCreated, String isHuman, String strength)  {
