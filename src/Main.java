@@ -8,6 +8,7 @@ public class Main {
 
 
 
+
         while (true) {
             System.out.println("Velkommen til SUPERHERO UNIVERSET.");
             System.out.println("1. Opret superhelt");
