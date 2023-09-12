@@ -6,7 +6,6 @@ public class Main {
 
         Database database = new Database();
 
-        System.out.println("Indtast superhero informationer eller 'q' for at afslutte:");
 
 
         while (true) {
