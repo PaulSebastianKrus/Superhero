@@ -29,13 +29,17 @@ public class Main {
 
                 System.out.print("Year created: ");
                 int yearCreated = keyboard.nextInt();
-
+                /*while (!keyboard.hasNextInt()){
+                    System.out.println("Du skal indtaste et tal");
+                    keyboard.next();
+                }
+                */
 
                 System.out.print("Is human: ");
                 String isHuman = keyboard.next();
 
                 System.out.print("Strength: ");
-                String strength = keyboard.next();
+                int strength = keyboard.nextInt();
 
                 //String[] data = input.split(",");
                 //String[] data = input.split(",");
@@ -56,9 +60,8 @@ public class Main {
 
         }
 
-        System.out.println("Superheroes in the database:");
+        System.out.println("Liste af superhelte");
         database.printSuperheroes();
-
         keyboard.close();
     }
 
