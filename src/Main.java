@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner keyboard = new Scanner(System.in);
 
         Database database = new Database();
 
@@ -13,29 +13,29 @@ public class Main {
             System.out.println("Velkommen til SUPERHERO UNIVERSET.");
             System.out.println("1. Opret superhelt");
             System.out.println("9 Afslut");
-            int valg = scanner.nextInt();
+            int valg = keyboard.nextInt();
 
             if (valg == 1) {
 
 
                 System.out.print("Navn: ");
-                String name = scanner.next();
+                String name = keyboard.next();
 
                 System.out.print("Real name: ");
-                String realName = scanner.next();
+                String realName = keyboard.next();
 
                 System.out.print("Super power: ");
-                String superPower = scanner.next();
+                String superPower = keyboard.next();
 
                 System.out.print("Year created: ");
-                int yearCreated = scanner.nextInt();
+                int yearCreated = keyboard.nextInt();
 
 
                 System.out.print("Is human: ");
-                String isHuman = scanner.next();
+                String isHuman = keyboard.next();
 
                 System.out.print("Strength: ");
-                String strength = scanner.next();
+                String strength = keyboard.next();
 
                 //String[] data = input.split(",");
                 //String[] data = input.split(",");
@@ -59,7 +59,7 @@ public class Main {
         System.out.println("Superheroes in the database:");
         database.printSuperheroes();
 
-        scanner.close();
+        keyboard.close();
     }
 
 }
