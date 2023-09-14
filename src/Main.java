@@ -20,12 +20,15 @@ public class Main {
 
                 System.out.print("Navn: ");
                 String name = keyboard.next();
+                keyboard.nextLine();
 
                 System.out.print("Real name: ");
                 String realName = keyboard.next();
+                keyboard.nextLine();
 
                 System.out.print("Super power: ");
                 String superPower = keyboard.next();
+                keyboard.nextLine();
 
                 System.out.print("Year created: ");
                 int yearCreated = keyboard.nextInt();
