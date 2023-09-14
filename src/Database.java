@@ -13,6 +13,7 @@ public class Database {
         superheroes.add(superhero2);
     }
 
+
     public void addSuperhero(String name, String realName, String superPower, int yearCreated, String isHuman, int strength) {
         Superhero superhero = new Superhero(name, realName, superPower, yearCreated, isHuman, strength);
         superheroes.add(superhero);
@@ -24,4 +25,29 @@ public class Database {
             System.out.println();
         }
     }
+
+    public ArrayList<Superhero> searchSuperhero(String name) {
+        ArrayList<Superhero> matchingSuperheroes = new ArrayList<>();
+
+        for (Superhero superhero : superheroes) {
+            if (superhero.getName().toLowerCase().contains(name.toLowerCase())) {
+                    matchingSuperheroes.add(superhero);
+
+            }
+
+
+        }
+        return matchingSuperheroes;
+
+    }
+
 }
+
+
+
+
+
+
+
+
+

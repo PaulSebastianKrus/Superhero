@@ -5,14 +5,16 @@ public class Main {
         Scanner keyboard = new Scanner(System.in);
 
         Database database = new Database();
-
-
-
+        Database searchSuperhero = new Database();
 
         while (true) {
+
             System.out.println("Velkommen til SUPERHERO UNIVERSET.");
             System.out.println("1. Opret superhelt");
+            System.out.println("5. Søg på en superhelt");
+            System.out.println("7. Udskriv liste af superhelte i databasen");
             System.out.println("9 Afslut");
+            System.out.println("Indtast dit valg!: ");
             int valg = keyboard.nextInt();
 
             if (valg == 1) {
@@ -56,15 +58,20 @@ public class Main {
                 //String strength = data[5].trim();
 
                 database.addSuperhero(name, realName, superPower, yearCreated, isHuman, strength);
-            }else if (valg == 9) {
+            } else if (valg == 7) {
+                //få den til at printe 2 navne hvis man indtaster det
+                System.out.println("Liste af superhelte");
+                database.printSuperheroes();
+                break;
+            } else if (valg == 5) ;{
+                System.out.println("Indtast søgning");
+                System.out.println(database.searchSuperhero(keyboard.next()));
                 break;
             }
 
 
         }
 
-        System.out.println("Liste af superhelte");
-        database.printSuperheroes();
         keyboard.close();
     }
 
