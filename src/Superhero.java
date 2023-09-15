@@ -7,8 +7,28 @@ public class Superhero {
     private int strength;
 
 
-    public String getName(){
+    public String getName() {
         return name;
+    }
+
+    public String getRealName() {
+        return realName;
+    }
+
+    public String getSuperPower() {
+        return superPower;
+    }
+
+    public int getYearCreated() {
+        return yearCreated;
+    }
+
+    public String getIsHuman() {
+        return isHuman;
+    }
+
+    public int getStrength() {
+        return strength;
     }
 
     public Superhero(String name, String realName, String superPower, int yearCreated, String isHuman, int strength) {
@@ -20,8 +40,32 @@ public class Superhero {
         this.strength = strength;
     }
 
-    
+
     public String toString() {
-        return "Name: " + name + "\nAlias: " + realName + "\nPower: " + superPower+"\nYear: "+ yearCreated+"\nHuman?: "+isHuman+"\nStrength: "+strength;
+        return "Name: " + name + "\nAlias: " + realName + "\nPower: " + superPower + "\nYear: " + yearCreated + "\nHuman?: " + isHuman + "\nStrength: " + strength;
+    }
+
+
+    public static void displaySuperheroDetails(Superhero superhero) {
+        System.out.println("Superhelt Information:");
+        System.out.println("------------------------------");
+        System.out.println("Navn: " + superhero.getName());
+        System.out.println("Real Name: " + superhero.getRealName());
+        System.out.println("Super Power: " + superhero.getSuperPower());
+        System.out.println("Year Created: " + superhero.getYearCreated());
+        System.out.println("Is Human: " + superhero.getIsHuman());
+        System.out.println("Strength: " + superhero.getStrength());
+        System.out.println("------------------------------");
     }
 }
+
+
+
+
+
+
+
+
+
+
+
