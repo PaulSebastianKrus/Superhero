@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Superhero {
     private String name;
     private String realName;
@@ -10,25 +12,46 @@ public class Superhero {
     public String getName() {
         return name;
     }
+    public void setName(String name){
+        this.name = name;
+    }
 
     public String getRealName() {
         return realName;
     }
+    public void setRealName(String realName){
+        this.realName = realName;
+    }
 
     public String getSuperPower() {
         return superPower;
+    }
+    public void setSuperPower(String superPower){
+        this.superPower = superPower;
     }
 
     public int getYearCreated() {
         return yearCreated;
     }
 
+    public void setYearCreated(int yearCreated) {
+        this.yearCreated = yearCreated;
+    }
+
     public String getIsHuman() {
         return isHuman;
     }
 
+    public void setIsHuman(String isHuman) {
+        this.isHuman = isHuman;
+    }
+
     public int getStrength() {
         return strength;
+    }
+
+    public void setStrength(int strength) {
+        this.strength = strength;
     }
 
     public Superhero(String name, String realName, String superPower, int yearCreated, String isHuman, int strength) {

@@ -1,9 +1,10 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Database {
     //private Superhero[]superheroes = new Superhero[20];
     private ArrayList<Superhero> superheroes = new ArrayList<>(20);
-
+    private Scanner keyboard = new Scanner(System.in);
 
     public Database() {
         Superhero superhero1 = new Superhero("Batman", "kanikkehuske", "flagermus", 1980, "ja", 3000);
@@ -41,10 +42,81 @@ public class Database {
 
     }
 
-    public void editSuperhero(){
+    public void editSuperhero(String name) {
+        // Find the superhero to edit based on their name
+        Superhero superheroToEdit = null;
+        for (Superhero superhero : superheroes) {
+            if (superhero.getName().equalsIgnoreCase(name)) {
+                superheroToEdit = superhero;
+                break; // Found the superhero, exit the loop
+            }
+        }
+
+        if (superheroToEdit == null) {
+            System.out.println("Superhero not found.");
+            return;
+        }
+
+        // Print out the original information before editing
+        System.out.println("Original superhero details:");
+        System.out.println(superheroToEdit);
+
+        // Prompt the user for new values
+        System.out.println("Editing superhero: " + superheroToEdit.getName());
+
+        // Prompt for new name
+        System.out.print("New name (press Enter to keep original): ");
+        String newName = keyboard.nextLine();
+        if (!newName.isEmpty()) {
+            superheroToEdit.setName(newName);
+        }
+
+        // Prompt for new real name
+        System.out.print("New real name (press Enter to keep original): ");
+        String newRealName = keyboard.nextLine();
+        if (!newRealName.isEmpty()) {
+            superheroToEdit.setRealName(newRealName);
+        }
+
+        // Prompt for new super power
+        System.out.print("New super power (press Enter to keep original): ");
+        String newSuperPower = keyboard.nextLine();
+        if (!newSuperPower.isEmpty()) {
+            superheroToEdit.setSuperPower(newSuperPower);
+        }
+
+        // Prompt for new year created
+        System.out.print("New year created (press Enter to keep original): ");
+        String newYearCreatedStr = keyboard.nextLine();
+        if (!newYearCreatedStr.isEmpty()) {
+            int newYearCreated = Integer.parseInt(newYearCreatedStr);
+            superheroToEdit.setYearCreated(newYearCreated);
+        }
+
+        // Prompt for new isHuman
+        System.out.print("New is human (true/false, press Enter to keep original): ");
+        String newIsHumanStr = keyboard.nextLine();
+        if (!newIsHumanStr.isEmpty()) {
+            superheroToEdit.setIsHuman(newIsHumanStr);
+        }
 
 
+        // Prompt for new strength
+        System.out.print("New strength (press Enter to keep original): ");
+        String newStrengthStr = keyboard.nextLine();
+        if (!newStrengthStr.isEmpty()) {
+            int newStrength = Integer.parseInt(newStrengthStr);
+            superheroToEdit.setStrength(newStrength);
+        }
+
+        System.out.println("Superhero edited successfully.");
+
+        // Print out the edited superhero
+        System.out.println("Edited superhero details:");
+        System.out.println(superheroToEdit);
     }
+
+
 
 
 
