@@ -10,6 +10,11 @@ public class UserInterface {
             displayMenu();
             int choice = getUserChoice();
 
+            if (choice == -1) {
+                System.out.println("Ugyldigt input. Prøv igen.");
+                continue; // Continue to the next iteration of the loop for invalid input.
+            }
+
             switch (choice) {
                 case 1:
                     createSuperhero();
@@ -33,6 +38,8 @@ public class UserInterface {
 
 
     }
+
+
     public void closeScanner() {
         keyboard.close();
     }
@@ -48,33 +55,52 @@ public class UserInterface {
     }
 
     private int getUserChoice() {
-        return keyboard.nextInt();
+        try {
+            int choice = keyboard.nextInt();
+            keyboard.nextLine(); // Consume the newline character
+            return choice;
+        } catch (java.util.InputMismatchException e) {
+            // Consume the invalid input
+            keyboard.nextLine();
+            return -1; // Return -1 to indicate an error
+        }
     }
 
     private void createSuperhero() {
         System.out.print("Navn: ");
-        String name = keyboard.next();
-        keyboard.nextLine();
+        String name = keyboard.nextLine();
 
         System.out.print("Real name: ");
-        String realName = keyboard.next();
-        keyboard.nextLine();
+        String realName = keyboard.nextLine();
 
         System.out.print("Super power: ");
-        String superPower = keyboard.next();
-        keyboard.nextLine();
+        String superPower = keyboard.nextLine();
 
-        System.out.print("Year created: ");
-        int yearCreated = keyboard.nextInt();
+        //System.out.print("Year created: ");
+        int yearCreated = getValidIntegerInput("Year created: ");
 
         System.out.print("Is human: ");
         String isHuman = keyboard.next();
 
-        System.out.print("Strength: ");
-        int strength = keyboard.nextInt();
+        //System.out.print("Strength: ");
+        int strength = getValidIntegerInput("Strength: ");
 
         database.addSuperhero(name, realName, superPower, yearCreated, isHuman, strength);
     }
+    private int getValidIntegerInput(String prompt) {
+        while (true) {
+            try {
+                System.out.print(prompt);
+                int input = keyboard.nextInt();
+                keyboard.nextLine(); // Consume the newline character
+                return input;
+            } catch (java.util.InputMismatchException e) {
+                System.out.println("Ugyldig input. Indtast venligst et heltal.");
+                keyboard.nextLine(); // Consume the invalid input
+            }
+        }
+    }
+
 
     private void searchSuperhero() {
         System.out.print("Indtast søgning: ");
